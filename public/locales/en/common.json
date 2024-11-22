@@ -1,0 +1,181 @@
+{
+    "welcome": "Welcome to Refine!",
+    "login": "Login",
+    "buttons": {
+      "logout": "Logout",
+      "create": "Create",
+      "save": "Save",
+      "refresh": "Refresh",
+      "edit": "Edit",
+      "show": "Details",
+      "confirm": "Sure you want to delete",
+      "cancel": "Cancel",
+      "delete": "Delete",
+      "actions": "Actions",
+      "posted": "Post",
+      "unposted": "Unpost"
+    },
+    "modal": {
+      "title": "Do you really want to modify status?"
+    },
+    "notifications": {
+      "success": "Operation successful",
+      "error": "An error has occurred",
+      "token": {
+        "message": "Token expired",
+        "description": "Please log in again"
+      }
+    },
+    "badges": {
+      "articles-type": {
+        "NEWS": "News",
+        "ARTICLE": "Article",
+        "BREVE": "Breve",
+        "SPORTS": "Sports",
+        "COVER": "Cover"
+      },
+      "status": {
+        "true": "Posted",
+        "false": "Unposted"
+      }
+    },
+    "pages": {
+      "login": {
+        "title": "Login",
+        "fields": {
+          "email": "Enter your email address",
+          "password": "Enter your password"
+        },
+        "errors": {
+          "required": "This field is required",
+          "invalid-email": "Invalid email"
+        },
+        "signin": "Sign in"
+      },
+      "dashboard": {
+        "title": "Dashboard"
+      },
+      "articles": {
+        "titles": {
+          "list": "Articles"
+        },
+        "title": "Articles",
+        "create": "Create article",
+        "edit": "Edit article",
+        "show": "Article details",
+        "form": {
+          "image": "Upload Article image",
+          "title": "Title",
+          "message": "Message",
+          "type": {
+            "label": "Article type",
+            "placeholder": "Select article type",
+            "options": {
+              "article": "Article",
+              "cover": "Cover",
+              "breve": "Brief",
+              "sports": "Sports",
+              "news": "News"
+            }
+          },
+          "error": {
+            "image": "Image is required",
+            "title": "Title is required",
+            "message": "Message is required",
+            "type": "Type is required"
+          }
+        },
+        "tabs": {
+          "values": {
+            "infos": {
+              "createdBy": "Created by ",
+              "createdAt": "Created on",
+              "message": "Message",
+              "title": "Title",
+              "type": "Article type",
+              "updatedAt": "Last updated",
+              "updatedBy": "updated by "
+            },
+            "estimate": "Estimate",
+            "expense": "Expenses",
+            "document": "Documents"
+          }
+        },
+        "list": {
+          "createdAt": "Created on",
+          "type": "Article type",
+          "title": "Title",
+          "posted": "Status"
+        }
+      },
+      "playlists": {
+        "title": "Playlists",
+        "create": "Create a playlist",
+        "edit": "Edit playlist",
+        "show": "Show playlist",
+        "values":{
+          "infos":{
+            "title": "Title",
+            "message":"Message",
+            "updatedAt":"Last updated",
+            "createdAt":"Created on",
+            "single": "Singles"
+          }
+        },
+        "form": {
+          "errors": {
+          "title": "Title is required",
+          "description": "Description is required",
+          "image": "Image is required",
+          "platform": "Platform is required",
+          "link": "Link is required"
+        },
+          "image": "Upload Article image",
+          "title": "Title",
+          "description": "Description",
+          "platform": {
+            "input": {
+              "label": "Add link",
+              "placeholder": "https://www.streaming.com"
+            },
+            "select": {
+              "label": "Choose streaming platform",
+              "placeholder": "--Choose--",
+              "option1": "Youtube",
+              "option2": "Spotify",
+              "option3": "Deezer",
+              "option4": "Boomplay",
+              "option5": "Apple music",
+              "option6": "Youtube music"
+            }
+          },
+          "single": {
+            "input": {
+              "label": "Add song title",
+              "placeholder": "shaw feat window - Revendication"
+            }
+          }
+        },
+        "list": {
+          "createdAt": "Created on",
+          "description": "Description",
+          "title": "Titre",
+          "posted": "Status"
+        },
+        "titles": {
+          "list": "Playlists"
+        }
+      },
+      "users": {
+        "title": "Users",
+        "show": "Show user"
+      },
+      "admins": {
+        "title": "Admins",
+        "create": "Create admin",
+        "edit": "Edit admin",
+        "show": "Show admin"
+      }
+    }
+  }
+  

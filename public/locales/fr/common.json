@@ -1,0 +1,180 @@
+{
+  "welcome": "Bienvenue à Refine!",
+  "login": "Connexion",
+  "buttons": {
+    "logout": "Déconnexion",
+    "create":"Créer",
+    "save": "Enregistrer",
+    "refresh": "Rafraichir",
+    "edit": "Modifier",
+    "show": "Détails",
+    "confirm": "Sûre de vouloir supprimer ?",
+    "cancel": "Annuler",
+    "delete": "Supprimer",
+    "actions": "Actions",
+    "posted": "Pubier",
+    "unposted": "Dépublier"
+  },
+  "modal": {
+    "title": "Êtes vous sûr de vouloir modifier le statut ?"
+  },
+  "notifications": {
+    "success": "Opération réussie",
+    "error": "Une erreur s'est produite",
+    "token": {
+      "message": "Token expiré",
+      "description": "Veuillez vous reconnecter"
+    }
+  },
+  "badges": {
+    "articles-type": {
+      "NEWS": "Nouveautés",
+      "ARTICLE": "Article",
+      "BREVE": "Breve",
+      "SPORTS": "Sports",
+      "COVER": "Cover"
+    },
+    "status": {
+      "true": "Publié",
+      "false": "Non publié"
+    }
+  },
+  "pages": {
+    "login": {
+      "title": "Se connecter",
+      "fields": {
+        "email": "Entrez votre adresse e-mail",
+        "password": "Entrez votre mot de passe"
+      },
+      "errors": {
+        "required": "Ce champ est requis",
+        "invalid-email": "E-mail invalide"
+      },
+      "signin": "Se connecter"
+    },
+    "dashboard": {
+      "title": "Tableau de Bord"
+    },
+    "articles": {
+      "titles": {
+        "list": "Liste des articles"
+      },
+      "title": "Articles",
+      "create": "Créer un article",
+      "edit": "Modifier l'article",
+      "show": "Détails de l'article",
+      "form": {
+        "image": "Selectionner l'image de l'aricle",
+        "title": "Titre",
+        "message": "Message",
+        "type": {
+          "label": "Type d'article",
+          "placeholder": "Sélectionnez le type de l'article",
+          "options": {
+            "article": "Article",
+            "cover": "Cover",
+            "breve": "Breve",
+            "sports": "Sports",
+            "news": "News"
+          }
+        },
+        "error": {
+          "image": "L'image est requise",
+          "title": "Le titre est requis",
+          "message": "Le message est requis",
+          "type": "Le type est requis"
+        }
+      },
+      "tabs": {
+        "values": {
+          "infos":{
+            "createdBy": "Créée par ",
+            "createdAt": "Créée le",
+            "message": "Message",
+            "title": "Titre",
+            "type": "Type d'article",
+            "updatedAt": "Dernière mise à jour",
+            "updatedBy": "mis à jour par "
+          },
+          "estimate": "Dévis",
+          "expense": "Depenses",
+          "document": "Documents"
+        }
+      },
+      "list": {
+        "createdAt": "Créée le",
+        "type": "Type d'article",
+        "title": "Titre",
+        "posted": "Statut"
+      }
+    },
+    "playlists": {
+      "title": "Playlists",
+      "create": "Créer une playlist",
+      "edit": "Modifier la playlist",
+      "show": "Afficher la playlist",
+      "values":{
+        "infos":{
+          "title": "Titre",
+          "message":"Message",
+          "updatedAt":"Dernière mise à jour",
+          "createdAt":"Créée le",
+          "single": "Sons"
+        }
+      },
+      "form": {
+        "errors": {
+          "title": "Le titre est requis",
+          "description": "La description est requise",
+          "image": "L'image est requise",
+          "platform": "La platforme est requise",
+          "link": "Le lien est requis"
+        },
+        "image": "Selectionner l'image de l'aricle",
+        "title": "Titre",
+        "description": "Description",
+        "platform": {
+          "input": {
+            "label": "Ajouter le lien",
+            "placeholder": "https://www.streaming.com"
+          },
+          "select": {
+            "label": "Choisir la plateforme de streaming",
+            "placeholder": "--Selection--",
+            "option1": "Youtube",
+            "option2": "Spotify",
+            "option3": "Deezer",
+            "option4": "Boomplay",
+            "option5": "Apple music",
+            "option6": "Youtube music"
+          }
+        },
+        "single": {
+          "input": {
+            "label": "Ajouter le titre du son",
+            "placeholder": "shaw feat window - Revendication"
+          }
+        }
+      },
+      "list": {
+        "createdAt": "Créée le",
+        "description": "Description",
+        "title": "Titre",
+        "posted": "Statut"
+      },
+      "titles": {
+        "list": "Liste des playlists"
+      }
+    },
+    "users": {
+      "title": "Utilisateurs",
+      "show": "Afficher l'utilisateur"
+    },
+    "admins": {
+      "title": "Admins",
+      "create": "Créer un admin",
+      "edit": "Modifier l'admin",
+      "show": "Afficher l'admin"
+    }
+  }
+}

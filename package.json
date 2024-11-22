@@ -1,0 +1,62 @@
+{
+  "name": "kongsamba-blog-console",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "dev": "cross-env NODE_OPTIONS=--max_old_space_size=4096 refine dev",
+    "build": "refine build",
+    "start": "refine start",
+    "lint": "next lint",
+    "refine": "refine",
+    "generate": "graphql-codegen"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.11.8",
+    "@graphql-codegen/cli": "^5.0.3",
+    "@graphql-codegen/client-preset": "^4.5.0",
+    "@mantine/core": "5",
+    "@mantine/form": "5",
+    "@mantine/hooks": "5",
+    "@mantine/notifications": "5",
+    "@refinedev/cli": "^2.16.21",
+    "@refinedev/core": "^4.47.1",
+    "@refinedev/devtools": "^1.1.32",
+    "@refinedev/graphql": "^6.4.8",
+    "@refinedev/kbar": "^1.3.6",
+    "@refinedev/mantine": "^2.33.0",
+    "@refinedev/nextjs-router": "^6.0.0",
+    "@refinedev/react-table": "^5.6.13",
+    "@tabler/core": "^1.0.0-beta21",
+    "@tabler/icons": "^3.21.0",
+    "@tanstack/react-table": "^8.20.5",
+    "@uiw/react-md-editor": "3.19.5",
+    "firebase": "^11.0.1",
+    "graphql": "^15.5.3",
+    "graphql-request": "^5.2.0",
+    "i18next": "^23.16.4",
+    "i18next-browser-languagedetector": "^8.0.0",
+    "i18next-http-backend": "^2.6.2",
+    "next": "^14.1.0",
+    "next-i18next": "^15.3.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-i18next": "^15.1.1",
+    "yup": "^1.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.16.2",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8",
+    "eslint-config-next": "^14.1.0",
+    "typescript": "^5.4.2"
+  },
+  "refine": {
+    "projectId": "ahbaBE-hGHmhT-vHHz4S"
+  }
+}
