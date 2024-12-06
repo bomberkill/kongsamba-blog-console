@@ -23,7 +23,7 @@ import { ApolloClient, ApolloProvider } from "@apollo/client";
 import Login from "./login/page";
 import "../../firebaseConfig";
 import { authProvider } from "@providers/auth-provider";
-import { IconHome, IconUserShield, IconUsers, IconNews, IconPlaylist} from "@tabler/icons-react";
+import { IconHome, IconUserShield, IconUsers, IconNews, IconPlaylist, IconCalendarEvent} from "@tabler/icons-react";
 
 
 // export const metadata: Metadata = {
@@ -130,6 +130,17 @@ export default function RootLayout({
                           meta: {
                             label: t("pages.playlists.title"),
                             icon: <IconPlaylist size={18}/>
+                          }
+                        },
+                        {
+                          name: "events",
+                          list: "/events",
+                          create: "/events/create",
+                          show: "/events/show/:id",
+                          edit: "/events/edit/:id",
+                          meta: {
+                            label: t("pages.events.title"),
+                            icon: <IconCalendarEvent size={18}/>
                           }
                         },
                         {

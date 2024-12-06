@@ -1,0 +1,232 @@
+"use client";
+import { DELETE_ARTICLE, GET_ALL_ARTICLES, GET_ALL_EVENTS } from "@queries";
+import { ColumnFilter } from "@components/columns/filter";
+import { ColumnSorter } from "@components/columns/sorter";
+import { TableLoaderSkeleton } from "@components/skeletons/TableLoaderSkeleton";
+import { Badge, Box, Group, Pagination, ScrollArea, Table, Text } from "@mantine/core";
+import { useDelete, useTranslation } from "@refinedev/core";
+import { DateField, DeleteButton, EditButton, List, ShowButton, TextField } from "@refinedev/mantine";
+import { useTable } from "@refinedev/react-table";
+import { ColumnDef, flexRender } from "@tanstack/react-table";
+import React from "react";
+import { ArticleTypeBadge } from "@components/badges/ArticleTypeBadge";
+
+export default function ListEvents () {
+    const  {translate, getLocale} = useTranslation();
+    const columns = React.useMemo<ColumnDef<Event>[]>(
+        () => [
+            {
+                id: "createdAt",
+                accessorKey: "metadata.createdAt",
+                header: function render() {
+                  return (
+                    <Text miw={180}>{translate("pages.events.list.createdAt")}</Text>
+                  );
+                },
+                cell: function render({ getValue }) {
+                  return (
+                    <DateField
+                      value={getValue<string>()}
+                      format="L LTS"
+                      locales={getLocale()}
+                      lineClamp={1}
+                    />
+                  );
+                },
+                enableColumnFilter: false,
+            },
+            {
+                id: "endAt",
+                accessorKey: "eventInput.endAt",
+                header: function render() {
+                  return (
+                    <Text miw={180}>{translate("pages.events.list.endAt")}</Text>
+                  );
+                },
+                cell: function render({ getValue }) {
+                  return (
+                    <DateField
+                      value={getValue<string>()}
+                      format="L LTS"
+                      locales={getLocale()}
+                      lineClamp={1}
+                    />
+                  );
+                },
+                enableColumnFilter: false,
+            },
+            // {
+            //     id: "type",
+            //     accessorKey: "articleInput.type",
+            //     header: function render() {
+            //         return <Text miw={60}>{translate("pages.articles.list.type")}</Text>;
+            //     },
+            //     cell: function render({ getValue }) {
+            //         const order = getValue<ArticleType>();
+            //         return <ArticleTypeBadge article={order} />;
+            //     },
+            //     meta: {
+            //         inputPlaceholder: translate("categories.fields.order"),
+            //         filterOperator: "contains",
+            //     },
+            //     enableSorting: false,
+            // },
+            {
+                id: "title",
+                accessorKey: "eventInput.title",
+                header: function render() {
+                    return (
+                    <Text miw={250}>
+                        {translate("pages.events.list.title")}
+                    </Text>
+                    );
+                },
+                // cell: function render({ getValue }) {
+                //     const name = getValue<string | undefined>();
+                //     return <TextField value={name || "-"} />;
+                // },
+                // meta: {
+                //     inputPlaceholder: translate("categories.fields.attributes.name"),
+                //     filterOperator: "contains",
+                // },
+                enableSorting: false,
+                enableColumnFilter: false
+            },
+            {
+                id: "posted",
+                accessorKey: "posted",
+                header: function render() {
+                    return <Text miw={60}>{translate("pages.articles.list.posted")}</Text>;
+                },
+                cell: function render({ getValue }) {
+                    const order = getValue<boolean>();
+                    return <Badge radius="xs" size="md" variant="light" color={order ? "green" : "red"}>{translate(`badges.status.${order}`)}</Badge>;
+                },
+                meta: {
+                    inputPlaceholder: translate("categories.fields.order"),
+                    filterOperator: "contains",
+                },
+                enableColumnFilter: true,
+                enableSorting: false
+            },
+            {
+                id: "actions",
+                accessorKey: "id",
+                header: "Actions",
+                cell: function render({ getValue }) {
+                    const articleId = getValue<string>();
+                    // const {data, mutate: deleteArticle} = useDelete()
+                    // deleteArticle({
+                    //     id: articleId,
+                    //     resource: "articles",
+                    //     meta: {
+                    //         gqlMutation: DELETE_ARTICLE
+                    //     }
+                    // })
+                    return (
+                    <Group spacing="xs" noWrap>
+                        <ShowButton hideText resource="events" recordItemId={articleId} />
+                        <EditButton hideText resource="events" recordItemId={articleId} />
+                        <DeleteButton  hideText resource="events" recordItemId={articleId} />
+                    </Group>
+                    );
+                },
+                enableColumnFilter: false,
+                enableSorting: false,
+            },
+        ],
+    [translate, getLocale]);
+    const {
+        getHeaderGroups,
+        getRowModel,
+        setOptions,
+        refineCore: {
+          setCurrent,
+          pageCount,
+          current,
+          tableQuery: { isLoading },
+        },
+      } = useTable<Event>({
+        refineCoreProps: {
+            resource: "events",
+            pagination: {
+                pageSize: 10,
+                current: 1,
+                mode: "server",
+            },
+            meta: {
+                gqlQuery: GET_ALL_EVENTS,
+            },
+        },
+        columns
+    });
+    setOptions((prev) => ({
+        ...prev,
+        meta: {
+          ...prev.meta,
+        },
+    }));
+    return (
+        <List title={translate("pages.events.titles.list")}>
+            <ScrollArea>
+                <Table highlightOnHover>
+                    <thead>
+                        {getHeaderGroups().map((headerGroup) => (
+                        <tr key={headerGroup.id}>
+                            {headerGroup.headers.map((header) => {
+                            return (
+                                <th key={header.id}>
+                                {!header.isPlaceholder ? (
+                                    <Group spacing="xs" noWrap>
+                                        <Box>
+                                            {flexRender(
+                                            header.column.columnDef.header,
+                                            header.getContext()
+                                            )}
+                                        </Box>
+                                        <Group spacing="xs" noWrap>
+                                            <ColumnFilter column={header.column} />
+                                            <ColumnSorter column={header.column} />
+                                        </Group>
+                                    </Group>
+                                ) : null}
+                                </th>
+                            );
+                            })}
+                        </tr>
+                        ))}
+                    </thead>
+                    <tbody>
+                        {isLoading ? (
+                        <TableLoaderSkeleton columns={columns.length} rows={5} />
+                        ) : (
+                        getRowModel().rows.map((row) => {
+                            return (
+                                <tr key={row.id}>
+                                    {row.getVisibleCells().map((cell) => {
+                                    return (
+                                        <td key={cell.id}>
+                                        {flexRender(
+                                            cell.column.columnDef.cell,
+                                            cell.getContext()
+                                        )}
+                                        </td>
+                                    );
+                                    })}
+                                </tr>
+                            );
+                        })
+                        )}
+                    </tbody>
+                </Table>
+            </ScrollArea>
+            <br />
+            <Pagination
+                position="right"
+                total={pageCount}
+                page={current}
+                onChange={setCurrent}
+            />
+        </List>
+    )
+}
