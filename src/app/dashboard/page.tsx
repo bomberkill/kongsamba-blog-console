@@ -14,7 +14,7 @@ export default function Dashboard () {
                         <IconPlus color="white" size={40} />
                     </ActionIcon>
                 </Center>
-                <Text mt="md">{translate('Ajouter une affaire')}</Text>
+                <Text mt="md">{translate('Ajouter')}</Text>
             </Box>
         </Card>
     )

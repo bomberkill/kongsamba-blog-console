@@ -1,7 +1,7 @@
 "use client";
 
 import { ApolloClient, ApolloLink, DocumentNode, HttpLink, InMemoryCache } from "@apollo/client";
-import { DELETE_ARTICLE, DELETE_PLAYLIST } from "@queries";
+import { DELETE_ARTICLE, DELETE_EVENT, DELETE_PLAYLIST } from "@queries";
 import { BaseRecord, CreateParams, CreateResponse, DataProvider, DeleteOneParams, DeleteOneResponse, GetListParams, GetListResponse, GetOneParams, GetOneResponse, UpdateParams, UpdateResponse } from "@refinedev/core";
 import graphqlDataProvider, { GraphQLClient } from "@refinedev/graphql";
 
@@ -29,13 +29,19 @@ const transformLink = new ApolloLink((operation, forward) => {
         return { data: response.data.getAllAdmins };
       }
       if (response.data?.getAdminById) {
-        return { data: response.data.getAllAdmins };
+        return { data: response.data.getAdminById };
       }
       if (response.data?.getAllUsers) {
         return { data: response.data.getAllUsers };
       }
       if (response.data?.getUserById) {
-        return { data: response.data.getAllUsers };
+        return { data: response.data.getUserById };
+      }
+      if (response.data?.getAllEvents) {
+        return { data: response.data.getAllEvents };
+      }
+      if (response.data?.getEventById) {
+        return { data: response.data.getEventById };
       }
       // If no transformation is needed, return the response as-is
       return response;
@@ -136,6 +142,9 @@ export const dataProvider: DataProvider = {
         break;
         case "playlists":
           request = DELETE_PLAYLIST;
+        break;
+        case "events":
+          request = DELETE_EVENT;
         break;
       
         default:

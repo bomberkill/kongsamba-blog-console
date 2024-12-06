@@ -1,20 +1,5 @@
 import { gql } from "@__generated__";
 
-export const LOG_IN = gql(`
-    mutation LOGIN($email: String!, $password: String!) {
-        login(adminInput: { email: $email, password: $password }) {
-            userId
-            token
-        }
-    }
-`)
-
-export const VERIFY_TOKEN = gql(`
-    query VERIFY_TOKEN($token: String!) {
-        verifyToken(token: $token)
-    }
-`)
-
 //#region Articles queries
 export const CREATE_ARTICLE = gql(`
     mutation CREATE_ARTICLE($title: String!, $message: String!, $image: String!, $type: ArticleType!, $author: String!) {
@@ -229,6 +214,106 @@ export const UPDATE_PLAYLIST_STATUS = gql(`
 `)
 
 //#endregion
+//#region Events queries
+export const GET_ALL_EVENTS = gql(`
+    query GET_ALL_EVENTS {
+        getAllEvents {
+            id
+            posted
+            eventInput {
+                author
+                image
+                link
+                title
+                startAt
+                endAt
+            }
+            metadata {
+                createdAt
+                updatedAt
+            }
+        }
+    }    
+`)
+export const GET_EVENT = gql(`
+    query GET_EVENT($id: ID!) {
+        getEventById(id: $id) {
+            id
+            posted
+            eventInput {
+                author
+                image
+                link
+                title
+                startAt
+                endAt
+            }
+            metadata {
+                createdAt
+                updatedAt
+            }
+        }
+    }    
+`)
+export const CREATE_EVENT = gql(`
+    mutation CREATE_EVENT($author: String!, $image: String!, $endAt: String!, $link: String, $title: String, $startAt: String) {
+        createEvent(
+            eventInput: {image: $image, author: $author, endAt: $endAt, link: $link, startAt: $startAt, title: $title}
+        ) {
+            id
+            posted
+            eventInput {
+                author
+                image
+                link
+                title
+                startAt
+                endAt
+            }
+            metadata {
+                createdAt
+                updatedAt
+            }
+        }
+    }
+`)
+export const UPDATE_EVENT =gql(`
+    mutation UPDATE_EVENT($id: ID!, $author: String!, $image: String!, $endAt: String!, $link: String, $title: String, $startAt: String ) {
+        updateEvent(
+            id: $id
+            eventInput: {image: $image, author: $author, endAt: $endAt, link: $link, startAt: $startAt, title: $title}
+        ) {
+            id
+            posted
+            eventInput {
+                author
+                image
+                link
+                title
+                startAt
+                endAt
+            }
+            metadata {
+                createdAt
+                updatedAt
+            }
+        }
+    }    
+`)
+export const UPDATE_EVENT_STATUS = gql(`
+    mutation UPDATE_EVENT_STATUS($id: ID!) {
+        updateEventStatus(id: $id) {
+            id
+            posted
+        }
+    }    
+`)
+export const DELETE_EVENT = gql(`
+    mutation DELETE_EVENT($id: ID!) {
+        deleteEvent(id: $id)
+    }
+`)
+//#endregion
 //#region Admins queries
 
 export const  GET_ALL_ADMINS = gql(`
@@ -265,6 +350,20 @@ export const UPDATE_ADMIN = gql(`
             id
         }
     }  
+`)
+export const LOG_IN = gql(`
+    mutation LOGIN($email: String!, $password: String!) {
+        login(adminInput: { email: $email, password: $password }) {
+            userId
+            token
+        }
+    }
+`)
+
+export const VERIFY_TOKEN = gql(`
+    query VERIFY_TOKEN($token: String!) {
+        verifyToken(token: $token)
+    }
 `)
 //#endregion
 //#region Users queries

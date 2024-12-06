@@ -166,6 +166,45 @@
         "list": "Liste des playlists"
       }
     },
+    "events": {
+      "titles": {
+        "list": "Liste des Evenements"
+      },
+      "title": "Evenements",
+      "create": "Créer un evenement",
+      "edit": "Modifier l'evenement",
+      "show": "Détails de l'evenement",
+      "form": {
+        "image": "Selectionner l'image de l'evenement",
+        "title": "Titre",
+        "link": "Lien",
+        "endAt": "Date d'expiration",
+        "startAt": "Date de debut",
+        "error": {
+          "image": "L'image est requise",
+          "endAt": "La date de fin est requise"
+        }
+      },
+      "tabs": {
+        "values": {
+          "infos":{
+            "createdBy": "Créée par ",
+            "createdAt": "Créée le",
+            "endAt": "Date d'expiration",
+            "title": "Titre",
+            "startAt": "Date de debut" ,
+            "updatedAt": "Dernière mise à jour",
+            "updatedBy": "mis à jour par "
+          }
+        }
+      },
+      "list": {
+        "createdAt": "Créée le",
+        "endAt": "Date d'expiration",
+        "title": "Titre",
+        "posted": "Statut"
+      }
+    },
     "users": {
       "title": "Utilisateurs",
       "show": "Afficher l'utilisateur"

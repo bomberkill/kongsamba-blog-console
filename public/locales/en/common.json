@@ -166,6 +166,45 @@
           "list": "Playlists"
         }
       },
+      "events": {
+        "titles": {
+          "list": "List of Events"
+        },
+        "title": "Events",
+        "create": "Create an Event",
+        "edit": "Edit the Event",
+        "show": "Event Details",
+        "form": {
+          "image": "Select the event image",
+          "title": "Title",
+          "link": "Link",
+          "endAt": "End Date",
+          "startAt": "Start Date",
+          "error": {
+            "image": "The image is required",
+            "endAt": "The end date is required"
+          }
+        },
+        "tabs": {
+          "values": {
+            "infos": {
+              "createdBy": "Created by ",
+              "createdAt": "Created on",
+              "endAt": "End Date",
+              "title": "Title",
+              "startAt": "Start Date",
+              "updatedAt": "Last updated",
+              "updatedBy": "Updated by "
+            }
+          }
+        },
+        "list": {
+          "createdAt": "Created on",
+          "endAt": "End Date",
+          "title": "Title",
+          "posted": "Status"
+        }
+      },
       "users": {
         "title": "Users",
         "show": "Show user"
