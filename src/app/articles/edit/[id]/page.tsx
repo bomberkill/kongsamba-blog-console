@@ -32,7 +32,7 @@ export default function EditArticle () {
         if (data) {
             setUplImage(data.data.articleInput.image)
         }
-    }, [isLoading])
+    }, [isLoading, data])
 
     const validationSchema = Yup.object().shape({
         type: Yup.string().required(translate("pages.articles.form.error.type")),

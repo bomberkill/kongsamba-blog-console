@@ -1,6 +1,6 @@
 "use client";
 
-import SingleForm, { LinkData } from "@components/layout/singleForm";
+// import SingleForm, { LinkData } from "@components/layout/singleForm";
 import { Box, Center, FileInput, Group, Image, Select, Text, TextInput } from "@mantine/core";
 import { yupResolver } from "@mantine/form";
 import { CREATE_PLAYLIST } from "@queries";

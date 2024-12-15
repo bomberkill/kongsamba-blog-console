@@ -53,7 +53,7 @@ export const apolloClient = new ApolloClient({
     cache: new InMemoryCache(),
     link: ApolloLink.from([
         transformLink, // Apply the custom transformer link
-        new HttpLink({ uri: API_URL }),
+        new HttpLink({ uri: process.env.API_URL }),
       ]),
 })
 

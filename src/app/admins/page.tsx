@@ -108,7 +108,7 @@ export default function ListAdmins () {
                 enableSorting: false,
             },
         ],
-    [translate, getLocale]);
+    [translate]);
     const {
         getHeaderGroups,
         getRowModel,
