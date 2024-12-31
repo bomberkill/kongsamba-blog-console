@@ -5,7 +5,7 @@ import { DELETE_ARTICLE, DELETE_EVENT, DELETE_PLAYLIST } from "@queries";
 import { BaseRecord, CreateParams, CreateResponse, DataProvider, DeleteOneParams, DeleteOneResponse, GetListParams, GetListResponse, GetOneParams, GetOneResponse, UpdateParams, UpdateResponse } from "@refinedev/core";
 import graphqlDataProvider, { GraphQLClient } from "@refinedev/graphql";
 
-const API_URL = "http://localhost:8080/graphql";
+const API_URL = "http://18.212.31.31:8080/graphql";
 
 const transformLink = new ApolloLink((operation, forward) => {
     return forward(operation).map((response) => {
@@ -53,7 +53,7 @@ export const apolloClient = new ApolloClient({
     cache: new InMemoryCache(),
     link: ApolloLink.from([
         transformLink, // Apply the custom transformer link
-        new HttpLink({ uri: process.env.API_URL }),
+        new HttpLink({ uri: API_URL }),
       ]),
 })
 
