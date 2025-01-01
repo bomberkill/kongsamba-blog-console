@@ -5,7 +5,7 @@ import { DELETE_ARTICLE, DELETE_EVENT, DELETE_PLAYLIST } from "@queries";
 import { BaseRecord, CreateParams, CreateResponse, DataProvider, DeleteOneParams, DeleteOneResponse, GetListParams, GetListResponse, GetOneParams, GetOneResponse, UpdateParams, UpdateResponse } from "@refinedev/core";
 import graphqlDataProvider, { GraphQLClient } from "@refinedev/graphql";
 
-const API_URL = "http://18.212.31.31:8080/graphql";
+const API_URL = "http://3.235.63.122:8080/graphql";
 
 const transformLink = new ApolloLink((operation, forward) => {
     return forward(operation).map((response) => {
