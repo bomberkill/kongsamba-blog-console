@@ -6,7 +6,7 @@ import { BaseRecord, CreateParams, CreateResponse, DataProvider, DeleteOneParams
 import graphqlDataProvider, { GraphQLClient } from "@refinedev/graphql";
 
 // const API_URL = "http://3.235.63.122:8080/graphql";
-const API_URL = "http://44.200.140.36:8080/graphql";
+const API_URL = "https://3.85.226.23:8080/graphql";
 
 const transformLink = new ApolloLink((operation, forward) => {
     return forward(operation).map((response) => {
